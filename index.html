@@ -148,6 +148,16 @@
             line-height: 1.8;
         }
 
+        .about-location {
+            display: inline-block;
+            background-color: var(--tertiary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: var(--primary);
+        }
+
         /* ===== Skills 섹션 ===== */
         .skills-grid {
             display: grid;
@@ -232,6 +242,24 @@
             color: var(--text-light);
             font-size: 0.95rem;
             line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background-color: var(--tertiary);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
         /* ===== Contact 섹션 ===== */
@@ -239,26 +267,56 @@
             text-align: center;
         }
 
+        .contact-message {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
         .contact-info {
             margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 2rem auto 0;
         }
 
-        .contact-info a {
-            display: inline-block;
-            margin: 0.5rem 1rem;
-            padding: 1rem 2rem;
-            background-color: var(--primary);
-            color: white;
+        .contact-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .contact-item:hover {
+            transform: scale(1.05);
+            filter: blur(2px);
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .contact-details h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-details a {
+            color: var(--text-light);
             text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            font-weight: 500;
+            transition: color 0.3s ease;
+            word-break: break-word;
         }
 
-        .contact-info a:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(139, 115, 85, 0.3);
+        .contact-details a:hover {
+            color: var(--secondary);
         }
 
         /* ===== Footer ===== */
@@ -334,9 +392,12 @@
                 grid-template-columns: 1fr;
             }
 
-            .contact-info a {
-                display: block;
-                margin: 0.5rem 0;
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-item {
+                padding: 1.5rem;
             }
         }
 
@@ -391,12 +452,16 @@
         <h2>About Me</h2>
         <div class="about-content fade-in">
             <div class="about-image">
-                <img src="https://via.placeholder.com/400x400/C4A77D/FFFFFF?text=Nahee+Kim" alt="김나희">
+                <img src="images/profile.jpg" alt="김나희 프로필 사진">
             </div>
             <div class="about-text">
+                <div class="about-location">
+                    <span>📍 Busan, Korea</span>
+                </div>
                 <p>안녕하세요, 브랜드 디자이너 김나희입니다.</p>
-                <p>저는 브랜드의 본질을 이해하고 이를 시각적으로 표현하는 것에 열정을 가지고 있습니다. 소비자와 브랜드 사이의 감정적 연결을 만들어내며, 각 프로젝트마다 독특한 스토리를 담아냅니다.</p>
-                <p>디자인을 통해 브랜드의 가치를 높이고, 시장에서 차별화된 아이덴티티를 구축하는 것이 저의 목표입니다.</p>
+                <p>저는 브랜드의 본질과 감정을 시각적으로 풀어내는 일을 좋아합니다. 단순히 예쁜 디자인을 넘어서, 브랜드가 지닌 이야기와 가치가 사람들의 마음에 자연스럽게 스며들도록 표현하는 것을 중요하게 생각합니다.</p>
+                <p>따뜻한 색감과 섬세한 디테일, 그리고 감성적인 분위기를 통해 브랜드가 하나의 세계처럼 느껴지게 만드는 것이 제 디자인의 목표입니다.</p>
+                <p>브랜드를 바라보는 애정 어린 시선과 깊이 있는 통찰로, 오래도록 기억에 남는 브랜드 경험을 만들어가고 싶습니다.</p>
             </div>
         </div>
     </section>
@@ -406,20 +471,28 @@
         <h2>Skills</h2>
         <div class="skills-grid">
             <div class="skill-item fade-in">
-                <h3>Brand Identity</h3>
-                <p>로고, 컬러, 타이포그래피를 통한 브랜드 아이덴티티 구축</p>
+                <h3>UX/UI Design</h3>
+                <p>사용자 중심의 인터페이스 디자인</p>
             </div>
             <div class="skill-item fade-in">
-                <h3>Visual Design</h3>
-                <p>Adobe Photoshop, Illustrator, InDesign 능숙한 활용</p>
+                <h3>Design Thinking</h3>
+                <p>문제 해결 중심의 창의적 사고</p>
             </div>
             <div class="skill-item fade-in">
-                <h3>Marketing Design</h3>
-                <p>포스터, 배너, SNS 콘텐츠 등 마케팅 디자인</p>
+                <h3>Figma, Sketch, Adobe XD</h3>
+                <p>프로토타이핑 및 디자인 툴</p>
             </div>
             <div class="skill-item fade-in">
-                <h3>Package Design</h3>
-                <p>제품의 가치를 높이는 패키지 디자인</p>
+                <h3>User Research</h3>
+                <p>사용자 조사 및 분석</p>
+            </div>
+            <div class="skill-item fade-in">
+                <h3>Prototyping</h3>
+                <p>인터랙티브 프로토타입 제작</p>
+            </div>
+            <div class="skill-item fade-in">
+                <h3>Team Leadership</h3>
+                <p>협업 및 프로젝트 리딩</p>
             </div>
         </div>
     </section>
@@ -430,38 +503,43 @@
         <div class="projects-grid">
             <div class="project-card fade-in">
                 <div class="project-image">
-                    <img src="https://via.placeholder.com/400x300/8B7355/FFFFFF?text=Project+1" alt="Project 1">
+                    <img src="images/project01.jpg" alt="파사카니김 프로젝트">
                 </div>
                 <div class="project-info">
-                    <h3>오가닉 코스메틱 브랜딩</h3>
-                    <p>자연주의 화장품 브랜드의 전체 아이덴티티 디자인. 친환경적 가치를 담은 로고와 패키지 개발.</p>
+                    <h3>파사카니김</h3>
+                    <p>&lt;청산에식품&gt;의 '인생 김스낵' 상품의 전체적인 브랜드 아이덴티티부터 마케팅까지 리디자인했습니다.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Ps</span>
+                        <span class="tech-tag">Ai</span>
+                        <span class="tech-tag">Ae</span>
+                        <span class="tech-tag">Id</span>
+                    </div>
                 </div>
             </div>
             <div class="project-card fade-in">
                 <div class="project-image">
-                    <img src="https://via.placeholder.com/400x300/C4A77D/FFFFFF?text=Project+2" alt="Project 2">
+                    <img src="images/project02.jpg" alt="Shell이마! 프로젝트">
                 </div>
                 <div class="project-info">
-                    <h3>카페 브랜드 리뉴얼</h3>
-                    <p>로컬 카페의 브랜드 리뉴얼 프로젝트. 모던하면서도 따뜻한 감성을 담아낸 디자인.</p>
+                    <h3>Shell이마!</h3>
+                    <p>부산 주민들을 대상으로 운동을 장려하는 브랜드 아이덴티티로써 UX/UI를 구축했습니다.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Ps</span>
+                        <span class="tech-tag">Ai</span>
+                    </div>
                 </div>
             </div>
             <div class="project-card fade-in">
                 <div class="project-image">
-                    <img src="https://via.placeholder.com/400x300/E8DCC4/8B7355?text=Project+3" alt="Project 3">
+                    <img src="images/project03.jpg" alt="빠지고픈 곤주님 프로젝트">
                 </div>
                 <div class="project-info">
-                    <h3>패션 브랜드 캠페인</h3>
-                    <p>시즌별 패션 캠페인 비주얼 디자인. SNS와 오프라인 매체를 아우르는 통합 디자인.</p>
-                </div>
-            </div>
-            <div class="project-card fade-in">
-                <div class="project-image">
-                    <img src="https://via.placeholder.com/400x300/F5F0E8/8B7355?text=Project+4" alt="Project 4">
-                </div>
-                <div class="project-info">
-                    <h3>베이커리 패키지 디자인</h3>
-                    <p>프리미엄 베이커리의 시그니처 제품 패키지 디자인. 수작업의 따뜻함을 담은 디자인.</p>
+                    <h3>빠지고픈 곤주님</h3>
+                    <p>여성들을 타겟으로 하여 다이어트용 곤약젤리 브랜드를 디자인했습니다.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Ps</span>
+                        <span class="tech-tag">Ai</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -470,12 +548,29 @@
     <!-- Contact 섹션 -->
     <section id="contact">
         <h2>Contact</h2>
-        <p>프로젝트 문의나 협업 제안은 언제든 환영합니다.</p>
+        <p class="contact-message">프로젝트 협업이나 강의 문의는 언제든 환영합니다!</p>
         <div class="contact-info">
-            <a href="mailto:nahee.kim@email.com">Email</a>
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-            <a href="https://behance.net" target="_blank">Behance</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <div class="contact-item fade-in">
+                <span class="contact-icon">📧</span>
+                <div class="contact-details">
+                    <h4>Email</h4>
+                    <a href="mailto:nahee3345@gmail.com">nahee3345@gmail.com</a>
+                </div>
+            </div>
+            <div class="contact-item fade-in">
+                <span class="contact-icon">📱</span>
+                <div class="contact-details">
+                    <h4>Phone</h4>
+                    <a href="tel:010-4184-3782">010-4184-3782</a>
+                </div>
+            </div>
+            <div class="contact-item fade-in">
+                <span class="contact-icon">🌐</span>
+                <div class="contact-details">
+                    <h4>Facebook</h4>
+                    <a href="https://facebook.com/nahee0616" target="_blank">@nahee0616</a>
+                </div>
+            </div>
         </div>
     </section>
 
